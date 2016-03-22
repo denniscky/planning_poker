@@ -1,0 +1,72 @@
+<head>
+  <title>storytime</title>
+</head>
+
+<body>
+  <h1>Story time!</h1>
+  {{> loginButtons}}
+
+  <br><br><br>
+
+  {{> summaryBoard}}
+
+  <br><br><br>
+
+  {{> userDashboard}}
+</body>
+
+<template name="userDashboard">
+  {{#if currentUser}}
+    {{#if isJoined}}
+      {{#with participant}}
+        {{> participantForm}}
+      {{/with}}
+    {{else}}
+      <button class='join'>Join story time!</button>
+    {{/if}}
+  {{/if}}
+</template>
+
+<template name="participantForm">
+  <form class="estimate">
+    <input type="checkbox" class="point0"/>0
+    <input type="checkbox" class="point1"/>1
+    <input type="checkbox" class="point2"/>2
+    <input type="checkbox" class="point3"/>3
+    <input type="checkbox" class="point5"/>5
+    <input type="checkbox" class="point8"/>8
+    <input type="checkbox" class="point13"/>13
+    <input type="checkbox" class="pointNa"/>?
+    <input type="submit" value={{submitPrompt}}>
+  </form>
+</template>
+
+<template name="summaryBoard">
+	<button class='restart'>Start over</button>
+    <ul>
+      {{#each participants}}
+        {{> card}}<br>
+      {{/each}}
+    </ul>
+</template>
+
+<template name="card">
+	{{username}} -
+  {{#if submittedEstimate}}
+    {{#if allParticipantsSubmitted}}
+      {{#if zero}}0{{/if}}
+      {{#if one}}1{{/if}}
+      {{#if two}}2{{/if}}
+      {{#if three}}3{{/if}}
+      {{#if five}}5{{/if}}
+      {{#if eight}}8{{/if}}
+      {{#if thirteen}}13{{/if}}
+      {{#if na}}?{{/if}}
+    {{else}}
+      submitted
+    {{/if}}
+  {{else}}
+    not submitted
+  {{/if}}
+  <button class='kill'>Kill</button>
+</template>
