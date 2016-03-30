@@ -8,19 +8,27 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a class="navbar-brand" href="#">Story Time!</a>
       </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <button type="button" class="restart btn btn-default navbar-btn">Start Over</button>
-        </ul>
+      <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+<!--         <ul class="nav navbar-nav">
+          <li> -->
+            <button type="button" class="restart btn btn-default navbar-btn">Start Over</button>
+<!--           </li>
+        </ul> -->
         <ul class="nav navbar-nav navbar-right">
           {{> loginButtons}}
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12">
         {{> summaryBoard}}
@@ -96,7 +104,7 @@
 
 <template name="card">
   <tr>
-  	<td>{{username}}</td>
+  	<td class="username">{{username}}</td>
     <td>
       {{#if submittedEstimate}}
         {{#if allParticipantsSubmitted}}
@@ -131,6 +139,9 @@
         <span class="unsubmitted">not submitted</span>
       {{/if}}
     </td>
-    <td><button class='kill btn btn-default btn-sm'>Kill!!!</button></td>
+    <td>
+      <span class="kill glyphicon glyphicon-remove" aria-hidden="true"></span>
+      <!-- <button class='kill btn btn-default btn-sm'>Kill</button> -->
+    </td>
   </tr>
 </template>

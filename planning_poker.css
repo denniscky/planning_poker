@@ -5,6 +5,10 @@
 .submitted {
 	color: #36F22C;
 }
+.username {
+	max-width: 50px;
+	overflow: hidden;
+}
 .card {
 	width: 45px;
 	height: 55px;
