@@ -1,18 +1,37 @@
 <head>
-  <title>storytime</title>
+  <title>Story Time!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-  <h1>Story time!</h1>
-  {{> loginButtons}}
-
-  <br><br><br>
-
-  {{> summaryBoard}}
-
-  <br><br><br>
-
-  {{> userDashboard}}
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Story Time!</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <button type="button" class="restart btn btn-default navbar-btn">Start Over</button>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{> loginButtons}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        {{> summaryBoard}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        {{> userDashboard}}
+      </div>
+    </div>
+  </div>
 </body>
 
 <template name="userDashboard">
@@ -22,51 +41,96 @@
         {{> participantForm}}
       {{/with}}
     {{else}}
-      <button class='join'>Join story time!</button>
+      <button class='join btn btn-primary'>Join story time!</button>
     {{/if}}
   {{/if}}
 </template>
 
 <template name="participantForm">
-  <form class="estimate">
-    <input type="checkbox" class="point0"/>0
-    <input type="checkbox" class="point1"/>1
-    <input type="checkbox" class="point2"/>2
-    <input type="checkbox" class="point3"/>3
-    <input type="checkbox" class="point5"/>5
-    <input type="checkbox" class="point8"/>8
-    <input type="checkbox" class="point13"/>13
-    <input type="checkbox" class="pointNa"/>?
-    <input type="submit" value={{submitPrompt}}>
-  </form>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">What do you think?</h3>
+    </div>
+    <div class="panel-body">
+      <form class="estimate">
+        <div class="form-group">
+          <label class="checkbox-inline"><input type="checkbox" class="point0"/>0</label>
+          <label class="checkbox-inline"><input type="checkbox" class="point1"/>1</label>
+          <label class="checkbox-inline"><input type="checkbox" class="point2"/>2</label>
+          <label class="checkbox-inline"><input type="checkbox" class="point3"/>3</label>
+          <label class="checkbox-inline"><input type="checkbox" class="point5"/>5</label>
+          <label class="checkbox-inline"><input type="checkbox" class="point8"/>8</label>
+          <label class="checkbox-inline"><input type="checkbox" class="point13"/>13</label>
+          <label class="checkbox-inline"><input type="checkbox" class="pointNa"/>?</label>
+        </div>
+
+        <button class="btn btn-primary" type="submit">{{submitPrompt}}</button>
+      </form>
+    </div>
+  </div>
 </template>
 
 <template name="summaryBoard">
-	<button class='restart'>Start over</button>
-    <ul>
-      {{#each participants}}
-        {{> card}}<br>
-      {{/each}}
-    </ul>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">What do people think?</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Guesstimate</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each participants}}
+            {{> card}}
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </template>
 
 <template name="card">
-	{{username}} -
-  {{#if submittedEstimate}}
-    {{#if allParticipantsSubmitted}}
-      {{#if zero}}0{{/if}}
-      {{#if one}}1{{/if}}
-      {{#if two}}2{{/if}}
-      {{#if three}}3{{/if}}
-      {{#if five}}5{{/if}}
-      {{#if eight}}8{{/if}}
-      {{#if thirteen}}13{{/if}}
-      {{#if na}}?{{/if}}
-    {{else}}
-      submitted
-    {{/if}}
-  {{else}}
-    not submitted
-  {{/if}}
-  <button class='kill'>Kill</button>
+  <tr>
+  	<td>{{username}}</td>
+    <td>
+      {{#if submittedEstimate}}
+        {{#if allParticipantsSubmitted}}
+          {{#if zero}}
+            <div class="card card-0">0</div>
+          {{/if}}
+          {{#if one}}
+            <div class="card card-1">1</div>
+          {{/if}}
+          {{#if two}}
+            <div class="card card-2">2</div>
+          {{/if}}
+          {{#if three}}
+            <div class="card card-3">3</div>
+          {{/if}}
+          {{#if five}}
+            <div class="card card-5">5</div>
+          {{/if}}
+          {{#if eight}}
+            <div class="card card-8">8</div>
+          {{/if}}
+          {{#if thirteen}}
+            <div class="card card-13">13</div>
+          {{/if}}
+          {{#if na}}
+            <div class="card card-na">?</div>
+          {{/if}}
+        {{else}}
+          <span class="submitted">submitted</span>
+        {{/if}}
+      {{else}}
+        <span class="unsubmitted">not submitted</span>
+      {{/if}}
+    </td>
+    <td><button class='kill btn btn-default btn-sm'>Kill!!!</button></td>
+  </tr>
 </template>

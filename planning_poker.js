@@ -4,17 +4,17 @@ Participants = new Mongo.Collection("participants");
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('counter', 0);
+    
+  Template.body.events({
+    'click .restart': function () {
+      Meteor.call("deleteAllEstimates");
+    },
+  });
 
   Template.summaryBoard.helpers({
     participants: function () {
       return Participants.find({});
     }
-  });
-    
-  Template.summaryBoard.events({
-    'click .restart': function () {
-      Meteor.call("deleteAllEstimates");
-    },
   });
 
   Template.userDashboard.helpers({

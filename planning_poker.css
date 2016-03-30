@@ -1,1 +1,49 @@
 /* CSS declarations go here */
+.unsubmitted {
+	color: red;
+}
+.submitted {
+	color: #36F22C;
+}
+.card {
+	width: 45px;
+	height: 55px;
+	font-size: 2.5em;
+	display: inline;
+	text-align: center;
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 2px;
+}
+.card-0 {
+	background-color: #DCDCDE;
+	color: #9F9FA1;
+}
+.card-1 {
+	background-color: #6BF22C;
+	color: #255210;
+}
+.card-2 {
+	background-color: #E8E11C;
+	color: #6E6B0F;
+}
+.card-3 {
+	background-color: #ED711F;
+	color: #703812;
+}
+.card-5 {
+	background-color: #BC25E6;
+	color: #5A126E;
+}
+.card-8 {
+	background-color: #4C58FC;
+	color: #1E236E;
+}
+.card-13 {
+	background-color: #E32D39;
+	color: #5C1116;
+}
+.card-na {
+	background-color: #8C898A;
+	color: #383737;
+}
