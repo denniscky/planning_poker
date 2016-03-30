@@ -17,11 +17,7 @@
         <a class="navbar-brand" href="#">Story Time!</a>
       </div>
       <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-<!--         <ul class="nav navbar-nav">
-          <li> -->
-            <button type="button" class="restart btn btn-default navbar-btn">Start Over</button>
-<!--           </li>
-        </ul> -->
+        <button type="button" class="restart btn btn-default navbar-btn">Start Over</button>
         <ul class="nav navbar-nav navbar-right">
           {{> loginButtons}}
         </ul>
@@ -31,12 +27,12 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12">
-        {{> summaryBoard}}
+        {{> userDashboard}}
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        {{> userDashboard}}
+        {{> summaryBoard}}
       </div>
     </div>
   </div>
@@ -62,17 +58,41 @@
     <div class="panel-body">
       <form class="estimate">
         <div class="form-group">
-          <label class="checkbox-inline"><input type="checkbox" class="point0"/>0</label>
-          <label class="checkbox-inline"><input type="checkbox" class="point1"/>1</label>
-          <label class="checkbox-inline"><input type="checkbox" class="point2"/>2</label>
-          <label class="checkbox-inline"><input type="checkbox" class="point3"/>3</label>
-          <label class="checkbox-inline"><input type="checkbox" class="point5"/>5</label>
-          <label class="checkbox-inline"><input type="checkbox" class="point8"/>8</label>
-          <label class="checkbox-inline"><input type="checkbox" class="point13"/>13</label>
-          <label class="checkbox-inline"><input type="checkbox" class="pointNa"/>?</label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point0"/>
+            <div class="card card-0">0</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point1"/>
+            <div class="card card-1">1</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point2"/>
+            <div class="card card-2">2</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point3"/>
+            <div class="card card-3">3</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point5"/>
+            <div class="card card-5">5</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point8"/>
+            <div class="card card-8">8</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point13"/>
+            <div class="card card-13">13</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="pointNa"/>
+            <div class="card card-na">?</div>
+          </label>
         </div>
 
-        <button class="btn btn-primary" type="submit">{{submitPrompt}}</button>
+        <button class="btn btn-primary submit" type="submit">{{submitPrompt}}</button>
       </form>
     </div>
   </div>
@@ -141,7 +161,6 @@
     </td>
     <td>
       <span class="kill glyphicon glyphicon-remove" aria-hidden="true"></span>
-      <!-- <button class='kill btn btn-default btn-sm'>Kill</button> -->
     </td>
   </tr>
 </template>

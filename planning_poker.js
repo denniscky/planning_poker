@@ -54,15 +54,11 @@ if (Meteor.isClient) {
         thirteen: template.$('.point13').is(':checked'),
         na: template.$('.pointNa').is(':checked'),
       };
-      console.log("input", input);
-      // Get value from form element
-      // var one = $(".point-1").attr("checked");
  
       // Insert a task into the collection
       Meteor.call("submitEstimate", input);
- 
-      // Clear form
-      // event.target.text.value = "";
+      debugger;
+      template.$('.submit').blur();
     },
   });
 

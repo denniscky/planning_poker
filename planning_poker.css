@@ -9,6 +9,9 @@
 	max-width: 50px;
 	overflow: hidden;
 }
+.estimate .checkbox-inline + .checkbox-inline {
+    margin-left: 0px;
+}
 .card {
 	width: 45px;
 	height: 55px;
