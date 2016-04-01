@@ -22,6 +22,11 @@
 	margin-right: 5px;
 	margin-bottom: 2px;
 }
+.card-sm {
+	width: 35px;
+	height: 40px;
+	font-size: 2em;
+}
 .card-0 {
 	background-color: #DCDCDE;
 	color: #9F9FA1;
