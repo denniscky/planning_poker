@@ -60,14 +60,12 @@
 	color: #EEEEEE;
 }
 .card-na {
-	width: 55px;
-	font-size: 1em;
-	padding-top: 1.2em;
+	font-size: 0.8em;
+	padding-top: 1.7em;
 	background-color: #B9BCBD;
 	color: #484A4A;
 }
 .card-na.card-sm {
-	width: 40px;
-	font-size: 0.7em;
-	padding-top: 1.4em;
+	font-size: 0.65em;
+	padding-top: 1.6em;
 }
