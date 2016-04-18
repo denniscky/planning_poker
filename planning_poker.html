@@ -91,8 +91,12 @@
             <div class="card card-13">13</div>
           </label>
           <label class="checkbox-inline">
+            <input type="checkbox" class="pointInf"/>
+            <div class="card card-inf">∞</div>
+          </label>
+          <label class="checkbox-inline">
             <input type="checkbox" class="pointNa"/>
-            <div class="card card-na">?</div>
+            <div class="card card-na">¯\_(ツ)_/¯</div>
           </label>
         </div>
 
@@ -153,8 +157,11 @@
           {{#if thirteen}}
             <div class="card card-sm card-13">13</div>
           {{/if}}
+          {{#if inf}}
+            <div class="card card-sm card-inf">∞</div>
+          {{/if}}
           {{#if na}}
-            <div class="card card-sm card-na">?</div>
+            <div class="card card-sm card-na">¯\_(ツ)_/¯</div>
           {{/if}}
         {{else}}
           <span class="submitted">submitted</span>

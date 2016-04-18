@@ -2,8 +2,7 @@ Estimates = new Mongo.Collection("estimates");
 Participants = new Mongo.Collection("participants");
 
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+  // Session.setDefault('counter', 0);
     
   Template.body.events({
     'click .restart': function () {
@@ -52,12 +51,12 @@ if (Meteor.isClient) {
         five: template.$('.point5').is(':checked'),
         eight: template.$('.point8').is(':checked'),
         thirteen: template.$('.point13').is(':checked'),
+        inf: template.$('.pointInf').is(':checked'),
         na: template.$('.pointNa').is(':checked'),
       };
  
       // Insert a task into the collection
       Meteor.call("submitEstimate", input);
-      debugger;
       template.$('.submit').blur();
     },
   });

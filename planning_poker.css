@@ -55,7 +55,19 @@
 	background-color: #E32D39;
 	color: #5C1116;
 }
+.card-inf {
+	background-color: #303436;
+	color: #EEEEEE;
+}
 .card-na {
-	background-color: #8C898A;
-	color: #383737;
+	width: 55px;
+	font-size: 1em;
+	padding-top: 1.2em;
+	background-color: #B9BCBD;
+	color: #484A4A;
+}
+.card-na.card-sm {
+	width: 40px;
+	font-size: 0.7em;
+	padding-top: 1.4em;
 }
