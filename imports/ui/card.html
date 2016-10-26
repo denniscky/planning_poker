@@ -1,0 +1,45 @@
+<template name="card">
+  <tr>
+  	<td class="username">{{username}}</td>
+    <td>
+      {{#if submittedEstimate}}
+        {{#if allParticipantsSubmitted}}
+          {{#if estimate.zero}}
+            <div class="card card-sm card-0">0</div>
+          {{/if}}
+          {{#if estimate.one}}
+            <div class="card card-sm card-1">1</div>
+          {{/if}}
+          {{#if estimate.two}}
+            <div class="card card-sm card-2">2</div>
+          {{/if}}
+          {{#if estimate.three}}
+            <div class="card card-sm card-3">3</div>
+          {{/if}}
+          {{#if estimate.five}}
+            <div class="card card-sm card-5">5</div>
+          {{/if}}
+          {{#if estimate.eight}}
+            <div class="card card-sm card-8">8</div>
+          {{/if}}
+          {{#if estimate.thirteen}}
+            <div class="card card-sm card-13">13</div>
+          {{/if}}
+          {{#if estimate.inf}}
+            <div class="card card-sm card-inf">∞</div>
+          {{/if}}
+          {{#if estimate.na}}
+            <div class="card card-sm card-na">\_(ツ)_/</div>
+          {{/if}}
+        {{else}}
+          <span class="submitted">Submitted</span>
+        {{/if}}
+      {{else}}
+        <span class="unsubmitted">Not Submitted</span>
+      {{/if}}
+    </td>
+    <td>
+      <span class="kill glyphicon glyphicon-remove" aria-hidden="true"></span>
+    </td>
+  </tr>
+</template>
