@@ -1,0 +1,54 @@
+<template name="participantForm">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">What do you think?</h3>
+    </div>
+    <div class="panel-body">
+      <form class="estimate">
+        <div class="form-group">
+        {{#with estimate}}
+          <label class="checkbox-inline">
+              <input type="checkbox" class="point0" checked="{{isChecked zero}}"/>
+            <div class="card card-0">0</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point1" checked="{{isChecked one}}"/>
+            <div class="card card-1">1</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point2" checked="{{isChecked two}}"/>
+            <div class="card card-2">2</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point3" checked="{{isChecked three}}"/>
+            <div class="card card-3">3</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point5" checked="{{isChecked five}}"/>
+            <div class="card card-5">5</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point8" checked="{{isChecked eight}}"/>
+            <div class="card card-8">8</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="point13" checked="{{isChecked thirteen}}"/>
+            <div class="card card-13">13</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="pointInf" checked="{{isChecked inf}}"/>
+            <div class="card card-inf">∞</div>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="pointNa" checked="{{isChecked na}}"/>
+            <div class="card card-na">\_(ツ)_/</div>
+          </label>
+          {{/with}}
+        </div>
+
+        <button class="btn btn-primary submit" type="submit">{{submitPrompt}}</button>
+        <button class="btn btn-warning reset" type="reset">Clear Estimate</button>
+      </form>
+    </div>
+  </div>
+</template>

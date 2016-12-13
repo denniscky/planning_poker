@@ -1,0 +1,15 @@
+<template name="userDashboard">
+  {{#if currentUser}}
+    {{#if isJoined}}
+      {{#with participant}}
+        {{> participantForm}}
+      {{/with}}
+    {{else}}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <button class='join btn btn-primary'>Join story time!</button>
+        </div>
+      </div>
+    {{/if}}
+  {{/if}}
+</template>
